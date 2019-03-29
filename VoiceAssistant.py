@@ -9,14 +9,14 @@ import pyperclip
 import win32com.client as wincl
 
 v =wincl.Dispatch("SAPI.SpVoice")                                         #api for win32com
-#v.voice_name = 'Emma'                                                                       #selecting ivona voice
-cl = wolframalpha.Client('PV92RR-GQ593XREKP')                                                      #api for wolfram alpha
+#v.voice_name = 'Emma'                                                    #selecting ivona voice
+cl = wolframalpha.Client('Enter your Wolframalpha Api')                   
 att = cl.query('Test/Attempt')
-r = sr.Recognizer()                                                                         #starting the speech_recognition recognizer
-r.pause_threshold = 0.7                                                                     #it works with 1.2 as well
+r = sr.Recognizer()                                                       #starting the speech_recognition recognizer
+r.pause_threshold = 0.7                                                   #it works with 1.2 as well
 r.energy_threshold = 400
 
-shell = wincl.Dispatch("WScript.Shell")                                           #to handle keyboard events
+shell = wincl.Dispatch("WScript.Shell")                                   #to handle keyboard events
 v.Speak('Hello! For a list of commands, plese say "keyword list"...')
 print("For a list of commands, please say: 'keyword list'...")
 
@@ -49,7 +49,7 @@ while True:                                                                     
 
         try:
             print("Please Speak")
-            print("@@@@")
+            print("@@@")
             r.adjust_for_ambient_noise(source)
             audio = r.listen(source, timeout = None)                                       #instantiating the Microphone, (timeout = None) can be an option
             
